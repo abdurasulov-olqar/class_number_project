@@ -9,7 +9,7 @@ class Number:
 
         returns: int
         """
-        pass
+        return self.value
 
     def is_odd(self):
         """
@@ -18,7 +18,7 @@ class Number:
         returns: bool
 
         """
-        pass
+        return self.value % 2 == 1
 
     def is_even(self):
         """
@@ -26,7 +26,7 @@ class Number:
 
         returns: bool
         """
-        pass
+        return self.value % 2 == 0
 
     def is_prime(self):
         """
@@ -42,7 +42,12 @@ class Number:
 
         returns: list
         """
-        pass
+        l = []
+        for i in range(1, self.value+1):
+            if self.value % i == 0:
+                l.append(i)
+        
+        return l
 
     def get_length(self):
         """
@@ -134,4 +139,7 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(3)
+number = Number(10)
+# print(number.get_number())
+# print(number.is_even())
+print(number.get_divisors())
