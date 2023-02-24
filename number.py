@@ -100,7 +100,7 @@ class Number:
             num+= digit * (10**power)
             power = power-1
 
-        return num
+        return digits
 
     def is_palindrome(self):
         """
@@ -119,13 +119,11 @@ class Number:
         
         digits = []
         i = abs(self.value)
-        if i== 0:
-            return [0]
         while i > 0:
             n = i%10
             digits.append(n)
             i = i // 10 
-        return digits[-1:]
+        return digits[::-1]
 
     def get_max(self):
         """
@@ -133,7 +131,7 @@ class Number:
 
         returns: int
         """
-        return max(number.get_digits())
+        return 0
 
     def get_min(self):
         """
@@ -141,7 +139,7 @@ class Number:
 
         returns: int
         """
-        return min(number.get_digits())
+        return 0
 
     def get_average(self):
         """
@@ -187,6 +185,6 @@ number = Number(8758736498)
 # print(number.get_sum())
 # print(number.get_reverse())
 # print(number.is_palindrome())
-# print(number.get_digits())
+print(number.get_digits())
 # print(number.get_max())
-print(number.get_min())
+# print(number.get_min())
