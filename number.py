@@ -119,7 +119,18 @@ class Number:
 
         returns: int
         """
-        pass
+        a = self.value
+        b = str(self.value) 
+        n = len(b) 
+        l = []
+        i = 0 
+        while i < n : 
+            z = a % 10
+            l.append(z) 
+            a = a // 10 
+            i = i + 1
+        
+        return max(l)
 
     def get_min(self):
         """
@@ -127,7 +138,18 @@ class Number:
 
         returns: int
         """
-        pass
+        a = self.value
+        b = str(self.value) 
+        n = len(b) 
+        l = []
+        i = 0 
+        while i < n : 
+            z = a % 10
+            l.append(z) 
+            a = a // 10 
+            i = i + 1
+        
+        return min(l)
 
     def get_average(self):
         """
@@ -168,7 +190,8 @@ number = Number(12345)
 #print(number.is_even())
 #print(number.get_divisors()) 
 #print(number.get_length())  
-print(number.get_digits())
+print(number.get_max())
+print(number.get_min())
 
 
 
