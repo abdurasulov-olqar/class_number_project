@@ -84,7 +84,18 @@ class Number:
 
         returns: int
         """
-        l = [] 
+        a = self.value
+        b = str(self.value) 
+        n = len(b) 
+        l = []
+        i = 0 
+        while i < n : 
+            z = a % 10
+            l.append(z) 
+            a = a // 10 
+            i = i + 1
+        
+        return l 
 
 
     def is_palindrome(self):
@@ -201,7 +212,7 @@ number = Number(12345)
 #print(number.is_even())
 #print(number.get_divisors()) 
 #print(number.get_length())  
-print(number.get_average())
+print(number.get_reverse())
 
 
 
