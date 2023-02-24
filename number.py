@@ -51,11 +51,12 @@ class Number:
 
     def get_length(self):
         """
-        Returns the number of digits in the number.
+        Returns the number of digits in the number. 
 
         returns: int
         """
-        pass
+        a = str(self.value) 
+        return len(a)
 
     def get_sum(self):
         """
@@ -71,7 +72,8 @@ class Number:
 
         returns: int
         """
-        pass
+        l = [] 
+
 
     def is_palindrome(self):
         """
@@ -139,7 +141,10 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(10)
+number = Number(1)
 # print(number.get_number())
 # print(number.is_even())
-print(number.get_divisors())
+#print(number.get_divisors()) 
+#print(number.get_length()) 
+
+   
