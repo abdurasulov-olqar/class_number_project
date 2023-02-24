@@ -116,13 +116,16 @@ class Number:
 
         returns: list
         """
+        
         digits = []
         i = abs(self.value)
+        if i== 0:
+            return [0]
         while i > 0:
             n = i%10
             digits.append(n)
             i = i // 10 
-        return digits
+        return digits[-1:]
 
     def get_max(self):
         """
