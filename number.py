@@ -64,7 +64,19 @@ class Number:
 
         returns: int
         """
-        pass
+        a = self.value
+        b = str(self.value) 
+        n = len(b) 
+        l = []
+        i = 0 
+        while i < n : 
+            z = a % 10
+            l.append(z) 
+            a = a // 10 
+            i = i + 1
+        
+        return sum(l)
+     
 
     def get_reverse(self):
         """
@@ -141,10 +153,13 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(1)
-# print(number.get_number())
-# print(number.is_even())
+number = Number(12345)
+#print(number.get_number())
+#print(number.is_even())
 #print(number.get_divisors()) 
-#print(number.get_length()) 
+#print(number.get_length())  
+print(number.get_sum())
+
+
 
    
