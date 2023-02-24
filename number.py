@@ -116,7 +116,8 @@ class Number:
 
         returns: list
         """
-        
+        if self.value == 0:
+            return [0]
         digits = []
         i = abs(self.value)
         while i > 0:
@@ -176,7 +177,7 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(8758736498)
+number = Number(0)
 # print(number.get_number())
 # print(number.is_even())
 # print(number.is_prime())
