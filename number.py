@@ -59,7 +59,8 @@ class Number:
 
         returns: int
         """
-        
+        if self.value == 0:
+            return 0
         digits = []
         i = abs(self.value)
         while i > 0:
@@ -100,7 +101,7 @@ class Number:
             num+= digit * (10**power)
             power = power-1
 
-        return digits
+        return num
 
     def is_palindrome(self):
         """
@@ -108,8 +109,19 @@ class Number:
 
         returns: bool
         """
-        return number.get_reverse() == self.value
+        digits = []
+        i = abs(self.value)
+        while i > 0:
+            n = i%10
+            digits.append(n)
+            i = i // 10 
+        num = 0    
+        power = len(digits)-1
+        for digit in digits:
+            num+= digit * (10**power)
+            power = power-1
 
+        return num == self.value
     def get_digits(self):
         """
         Returns a list of all the digits in the number.
@@ -132,7 +144,15 @@ class Number:
 
         returns: int
         """
-        return 0
+        if self.value == 0:
+            return [0]
+        digits = []
+        i = abs(self.value)
+        while i > 0:
+            n = i%10
+            digits.append(n)
+            i = i // 10 
+        return max(digits)
 
     def get_min(self):
         """
@@ -140,7 +160,15 @@ class Number:
 
         returns: int
         """
-        return 0
+        if self.value == 0:
+            return [0]
+        digits = []
+        i = abs(self.value)
+        while i > 0:
+            n = i%10
+            digits.append(n)
+            i = i // 10 
+        return min(digits)
 
     def get_average(self):
         """
@@ -177,15 +205,15 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(0)
+number = Number(658723389)
 # print(number.get_number())
 # print(number.is_even())
 # print(number.is_prime())
 # print(number.get_divisors())
 # print(number.get_length())
 # print(number.get_sum())
-# print(number.get_reverse())
+print(number.get_reverse())
 # print(number.is_palindrome())
-print(number.get_digits())
+# print(number.get_digits())
 # print(number.get_max())
 # print(number.get_min())
