@@ -1,3 +1,4 @@
+import statistics
 class Number:
     def __init__(self, value: int):
         self.value = value
@@ -60,7 +61,7 @@ class Number:
         returns: int
         """
         if self.value == 0:
-            return 0
+            return 1
         digits = []
         i = abs(self.value)
         while i > 0:
@@ -176,8 +177,16 @@ class Number:
 
         returns: float
         """
-        
-        return number.get_sum()/number.get_length()
+        if self.value == 0:
+            return [0]
+        digits = []
+        i = abs(self.value)
+        while i > 0:
+            n = i%10
+            digits.append(n)
+            i = i // 10 
+        return sum(digits)/len(digits)
+       
 
     def get_median(self):
         """
@@ -185,7 +194,7 @@ class Number:
 
         returns: float
         """
-        pass
+        return statistics.median([int(i) for i in str(self.value)])
 
     def get_range(self):
         """
@@ -193,7 +202,7 @@ class Number:
 
         returns: list
         """
-        pass
+        return [min([int(i) for i in str(self.value)]), max([int(i) for i in str(self.value)])]
 
     def get_frequency(self):
         """
@@ -201,7 +210,12 @@ class Number:
 
         returns: dict
         """
-        pass
+        digits = [int(i) for i in str(self.value)]
+        d:dict  = {}
+        for i in digits:
+            d.update({i: digits.count(i)})
+            
+        return d
     
 
 # Create a new instance of Number
@@ -212,8 +226,11 @@ number = Number(658723389)
 # print(number.get_divisors())
 # print(number.get_length())
 # print(number.get_sum())
-print(number.get_reverse())
+# print(number.get_reverse())
 # print(number.is_palindrome())
 # print(number.get_digits())
 # print(number.get_max())
 # print(number.get_min())
+# print(number.get_median())
+# print(number.get_range())
+print(number.get_frequency())
