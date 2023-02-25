@@ -56,7 +56,7 @@ class Number:
 
     def get_length(self):
         """
-        Returns the number of digits in the number.
+        Returns the number of digits in the number. 
 
         returns: int
         """
@@ -69,6 +69,7 @@ class Number:
             digits.append(n)
             i = i // 10 
         return len(digits)
+
 
     def get_sum(self):
         """
@@ -83,6 +84,8 @@ class Number:
             s = s+n
             i = i // 10 
         return s
+ 
+
 
     def get_reverse(self):
         """
@@ -103,6 +106,7 @@ class Number:
             power = power-1
 
         return num
+
 
     def is_palindrome(self):
         """
@@ -139,6 +143,7 @@ class Number:
             i = i // 10 
         return digits[::-1]
 
+
     def get_max(self):
         """
         Returns the largest digit in the number.
@@ -155,21 +160,26 @@ class Number:
             i = i // 10 
         return max(digits)
 
+
     def get_min(self):
         """
         Returns the smallest digit in the number.
 
         returns: int
         """
-        if self.value == 0:
-            return [0]
-        digits = []
-        i = abs(self.value)
-        while i > 0:
-            n = i%10
-            digits.append(n)
-            i = i // 10 
-        return min(digits)
+        a = self.value
+        b = str(self.value) 
+        n = len(b) 
+        l = []
+        i = 0 
+        while i < n : 
+            z = a % 10
+            l.append(z) 
+            a = a // 10 
+            i = i + 1
+        
+        return min(l)
+
 
     def get_average(self):
         """
@@ -177,16 +187,19 @@ class Number:
 
         returns: float
         """
-        if self.value == 0:
-            return [0]
-        digits = []
-        i = abs(self.value)
-        while i > 0:
-            n = i%10
-            digits.append(n)
-            i = i // 10 
-        return sum(digits)/len(digits)
-       
+        a = self.value
+        b = str(self.value) 
+        n = len(b) 
+        l = []
+        i = 0 
+        while i < n : 
+            z = a % 10
+            l.append(z) 
+            a = a // 10 
+            i = i + 1
+        
+        return sum(l)/n
+
 
     def get_median(self):
         """
@@ -218,7 +231,7 @@ class Number:
         return d
     
 
-# Create a new instance of Number
+
 number = Number(658723389)
 # print(number.get_number())
 # print(number.is_even())
@@ -234,3 +247,4 @@ number = Number(658723389)
 # print(number.get_median())
 # print(number.get_range())
 # print(number.get_frequency())
+
