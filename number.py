@@ -247,4 +247,5 @@ number = Number(658723389)
 # print(number.get_median())
 # print(number.get_range())
 # print(number.get_frequency())
+# test
 
